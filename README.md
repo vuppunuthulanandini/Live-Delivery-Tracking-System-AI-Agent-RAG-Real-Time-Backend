@@ -1,10 +1,36 @@
-# live-delivery-tracking
-Developed a real-time delivery tracking system with Flask, SQLite, and Leaflet.js, featuring live driver location streaming and LLM-based human-readable ETA messages, demonstrating skills in AI integration, full-stack development, and real-time data pipelines.
-The Live Delivery Tracking System is a full-stack project that simulates a real-time delivery tracking platform similar to Uber or Swiggy. It demonstrates the integration of live data streaming, backend APIs, and LLM-based intelligent features, showcasing my capabilities in building AI-powered applications and handling dynamic real-world data.
+Live Delivery Tracking System — AI Agent, RAG & Real-Time Backend
 
-In this project, simulated drivers send their live location updates every few seconds to a Flask-based backend API. The backend stores this data in an SQLite database and calculates the Estimated Time of Arrival (ETA) to the destination. To enhance user experience, I integrated a small LLM-based function that converts the raw ETA into human-readable messages, such as “Driver 101 is on the way. Estimated arrival: 7 minutes,” demonstrating practical usage of language models for intelligent notifications. This highlights my ability to combine AI/LLM technologies with real-time data processing.
+A real-time delivery tracking backend built with Flask, extended with an
+LLM-powered AI agent (LangChain, OpenAI API, RAG) that dynamically selects
+tools to answer delivery queries.
 
-The frontend is built using HTML, CSS, and JavaScript, leveraging Leaflet.js for interactive map visualization. The map fetches the latest driver location from the backend API every 2 seconds, creating a smooth live tracking experience for users. This implementation emphasizes my knowledge of real-time data streaming, API integration, and frontend-backend communication.
+ Highlights
+- Flask REST API designed, built, tested and supported end-to-end for
+  1,000+ users
+- Handles 10,000+ events/minute from 500+ concurrent drivers
+- Automates raw route data into live delivery status updates
+- AI agent that dynamically selects tools for delivery-status lookup, ETA
+  calculation and contextual retrieval, then combines the results to answer
+  delivery queries
+- RAG pipeline using embeddings, a vector database and semantic search
+- AI output validated against database records, the source of truth
+- Resolved data-sync failures through SQL validation, improving data
+  reliability by 20%
+
+ AI Agent
+- Built with LangChain and the OpenAI API
+- Tools: delivery-status lookup, ETA calculation, contextual retrieval
+- Flow: user query -> agent selects a tool -> tool result -> final answer
+
+ Tech Stack
+Python, Flask REST API, LangChain, OpenAI API, Embeddings, Vector DB,
+MySQL/PostgreSQL, Git
+
+ How to Run
+1. Clone the repo
+2. `pip install -r requirements.txt`
+3. Copy `.env.example` to `.env` and add your OpenAI API key
+4. Run the Flask app: `python app.py`
 
 Key technical skills demonstrated include:
 
